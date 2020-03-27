@@ -1,5 +1,4 @@
-from .. import route
-from ..base import BaseHandler
+from anorc import route, BaseHandler
 
 
 @route("/", name="home")

@@ -1,6 +1,7 @@
 import tornado.web
 from tornado.web import URLSpec
 from config import config
+from .base import BaseHandler
 
 
 class Route(object):
@@ -16,7 +17,7 @@ route = Route()
 
 
 def create_app():
-    from .main import main
+    from .main import views 
 
 
     class Application(tornado.web.Application):
