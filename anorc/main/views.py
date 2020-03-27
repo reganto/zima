@@ -4,11 +4,26 @@ from anorc import route, BaseHandler
 @route("/", name="home")
 class MainHandler(BaseHandler):
     def get(self):
-        self.write({"status": "OK"})
+        self.write({
+            "status": "success",
+            "method": "GET"
+        })
 
+    def post(self):
+        self.write({
+            "status": "success",
+            "method": "POST"
+        })
 
-@route("/user/", name="user")
-class UserHandler(BaseHandler):
-    def get(self):
-        self.write({"status": "main.user"})
+    def put(self):
+        self.write({
+            "status": "success",
+            "method": "PUT"
+        })
+
+    def delete(self):
+        self.write({
+            "status": "success",
+            "method": "DELETE"
+        })
 
