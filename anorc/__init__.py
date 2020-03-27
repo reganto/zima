@@ -8,10 +8,10 @@ class Route(object):
     urls = []
     
     def __call__(self, url, name=None):
-        def _(cls):
+        def wrapper(cls):
             self.urls.append(URLSpec(url, cls, name=name))
             return cls
-        return _
+        return wrapper
 
 route = Route()
 
