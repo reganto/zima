@@ -3,5 +3,5 @@
 ### A Tornado Wrapper to Create REST API
 
 TODO:
-- [ ] Automatic nameing for routes
+- [x] Automatic nameing for routes
 
