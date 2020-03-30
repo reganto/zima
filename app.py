@@ -15,7 +15,7 @@ def manage_cli(m):
     """Manage anorc command line options"""
 
     if args.m == 1: # Single instance
-        app = create_app()
+        app = create_app("default")
         app.listen(args.p, config.get("HOST"))
         if args.v:
             print(f"Server started at {config.get('HOST')}:{args.p}")
@@ -23,7 +23,7 @@ def manage_cli(m):
         app_list = []
         port = args.p
         for _ in range(args.m):
-            app_list.append(create_app())
+            app_list.append(create_app("default"))
         for app in app_list:
             app.listen(port, config.get("HOST"))
             if args.v:
