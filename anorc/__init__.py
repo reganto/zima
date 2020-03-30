@@ -11,7 +11,10 @@ class Route(object):
     
     def __call__(self, url, name=None):
         def wrapper(cls):
-            self.urls.append(URLSpec(url, cls, name=name))
+            self.urls.append(URLSpec(
+                                url, 
+                                cls, 
+                                name=name if name else cls.__name__.lower()))
             return cls
         return wrapper
 
@@ -42,6 +45,6 @@ def create_app(config_name):
             super(Application, self).__init__(route.urls, **settings)
 
     app = Application()
-
+    
     return app
 

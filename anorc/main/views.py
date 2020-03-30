@@ -1,7 +1,7 @@
 from anorc import route, BaseHandler
 
 
-@route("/", name="home")
+@route("/")
 class MainHandler(BaseHandler):
     def get(self):
         self.write({
