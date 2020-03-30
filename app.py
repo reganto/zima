@@ -14,7 +14,7 @@ if args.m == 1:
     app = create_app()
     app.listen(args.p, config.get("HOST"))
     if args.v:
-        print("Server started at %s:%s" % (config.get("HOST"), args.p))
+        print(f"Server started at {config.get('HOST')}:{args.p}")
 elif args.m > 1:
     app_list = []
     port = args.p
@@ -23,7 +23,7 @@ elif args.m > 1:
     for app in app_list:
         app.listen(port, config.get("HOST"))
         if args.v:
-            print("Server started at %s:%s" % (config.get("HOST"), port))
+            print(f"Server started at {config.get('HOST')}:{port}")
         port += 1
 else:
     print("value of 'm' must be 1 or more.")
