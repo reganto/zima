@@ -5,16 +5,17 @@ class Config(object):
 
 class DevelopmentConfig(Config):
     """Development config class"""
+    development = True
     debug = True
 
 
 class TestingConfig(Config):
     """Testing config class"""
-    pass
+    testing = True
 
 
 class ProductionConfig(Config):
-    pass
+    production = True
 
 
 config = {
