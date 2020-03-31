@@ -4,9 +4,9 @@ from config import config
 from zima import create_app
 
 # Command line options
-parser = argparse.ArgumentParser(description="Anorc command line")
-parser.add_argument("-p", default=8000, type=int, help="Run on the given port.")
-parser.add_argument("-m", default=1, type=int, help="Run multiple instances of app.")
+parser = argparse.ArgumentParser(description="Zima Command Line")
+parser.add_argument("-p", default=8000, type=int, help="Run on the given port.(default is 8000)")
+parser.add_argument("-m", default=1, type=int, help="Run multiple instances of app.(default is 1)")
 parser.add_argument("-v", default=False, type=bool, help="Verbosity.(default is False)")
 args = parser.parse_args()
 
