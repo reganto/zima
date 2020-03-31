@@ -4,7 +4,7 @@ from zima import create_app
 
 class IndexTestCase(AsyncHTTPTestCase):
     def get_app(self):
-        return create_app("default")
+        return create_app("testing")
 
     def test_homepage(self):
         response = self.fetch("/")
