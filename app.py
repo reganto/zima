@@ -12,12 +12,37 @@ logger.addHandler(stream_handler)
 logger.setLevel(logging.DEBUG)
 
 # Command line options
-parser = argparse.ArgumentParser(description="Zima Command Line")
-parser.add_argument("-p", default=8000, type=int, help="Run on the given port.(default is 8000)")
-parser.add_argument("-m", default=1, type=int, help="Run multiple instances of app.(default is 1)")
-parser.add_argument("-l", default="default", type=str, help="Mode level-development,testing,production.(default is development)")
-parser.add_argument("-t", default=False, type=bool, help="Run unit tests.(default is false)")
-parser.add_argument("-v", default=False, type=bool, help="Verbosity.(default is false)")
+parser = argparse.ArgumentParser(
+                         description="""Zima is a wrapper around Tornado 
+                                      to create REST Api""",
+                         usage="python %(prog)s [options]")
+parser.add_argument(
+              "-p",
+              default=8000,
+              type=int,
+              help="Run on the given port.(default is 8000)")
+parser.add_argument(
+              "-m",
+              default=1,
+              type=int,
+              help="Run multiple instances of app.(default is 1)")
+parser.add_argument(
+              "-l",
+              default="default",
+              type=str,
+              help="development,testing,production.(default is development)")
+parser.add_argument(
+              "-t",
+              action="store_true",
+              help="Run unit tests.")
+parser.add_argument(
+              "-v",
+              action="store_true",
+              help="Verbosity.")
+parser.add_argument(
+              "-V",
+              action="version",
+              version="Zima 0.0.1")
 args = parser.parse_args()
 
 
