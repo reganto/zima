@@ -1,8 +1,15 @@
 import sys
 import argparse
+import logging
 from tornado.ioloop import IOLoop
 from config import config
 from zima import create_app
+
+# logging
+logger = logging.getLogger(__name__)
+stream_handler = logging.StreamHandler(sys.stdout)
+logger.addHandler(stream_handler)
+logger.setLevel(logging.DEBUG)
 
 # Command line options
 parser = argparse.ArgumentParser(description="Zima Command Line")
@@ -29,7 +36,7 @@ def app_instances():
         app = create_app(args.l)
         app.listen(args.p, config.get("HOST"))
         if args.v:
-            print(f"Server started at {config[args.l].host}:{args.p}")
+            logger.info(f"Server started at {config[args.l].host}:{args.p}")
     elif args.m > 1: # Multiple instances
         app_list = []
         port = args.p
@@ -38,10 +45,10 @@ def app_instances():
         for app in app_list:
             app.listen(port, config.get("HOST"))
             if args.v:
-                print(f"Server started at {config[args.l].host}:{port}")
+                logger.info(f"Server started at {config[args.l].host}:{port}")
             port += 1
     else:
-        print("value of 'm' must be 1 or more.")
+        logger.warning("value of 'm' must be 1 or more.")
         sys.exit(0)
 
 
@@ -56,6 +63,6 @@ def manage_cli():
         
 
 manage_cli()
-io_loop = IOLoop.instance()
+io_loop = IOLoop.current()
 io_loop.start()
 
