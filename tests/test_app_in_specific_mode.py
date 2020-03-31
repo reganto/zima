@@ -1,5 +1,5 @@
 from unittest import TestCase
-from anorc import create_app
+from zima import create_app
 
 
 class AppModeTestCase(TestCase):

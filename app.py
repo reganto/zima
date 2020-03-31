@@ -1,7 +1,7 @@
 import argparse
 from tornado.ioloop import IOLoop
 from config import config
-from anorc import create_app
+from zima import create_app
 
 # Command line options
 parser = argparse.ArgumentParser(description="Anorc command line")
