@@ -11,7 +11,7 @@ stream_handler = logging.StreamHandler(sys.stdout)
 logger.addHandler(stream_handler)
 logger.setLevel(logging.DEBUG)
 
-# Command line options
+# Command line arguments 
 parser = argparse.ArgumentParser(
                          description="Zima is a wrapper around Tornado"
                                      "to create REST Api",
