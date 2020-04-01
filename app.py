@@ -13,8 +13,8 @@ logger.setLevel(logging.DEBUG)
 
 # Command line options
 parser = argparse.ArgumentParser(
-                         description="""Zima is a wrapper around Tornado 
-                                      to create REST Api""",
+                         description="Zima is a wrapper around Tornado"
+                                     "to create REST Api",
                          usage="python %(prog)s [options]")
 parser.add_argument(
               "-p",
