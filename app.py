@@ -73,8 +73,7 @@ def app_instances():
                 logger.info(f"Server started at {config[args.l].host}:{port}")
             port += 1
     else:
-        logger.warning("value of 'm' must be 1 or more.")
-        sys.exit(0)
+        assert False, "value of 'm' must be 1 or more."
 
 
 def manage_cli():
