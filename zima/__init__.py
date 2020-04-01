@@ -5,7 +5,7 @@ from .base import BaseHandler
 
 
 class Route(object):
-    """Anorc router class"""
+    """Zima router class"""
 
     urls = []
     
