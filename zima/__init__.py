@@ -21,7 +21,7 @@ class Route(object):
 route = Route()
 
 
-def config_class_to_dict(cls):
+def _config_class_to_dict(cls):
     """Convert config class to dict"""
 
     class_attributes_dict = cls.__dict__
@@ -41,7 +41,7 @@ def create_app(config_name):
 
     class Application(tornado.web.Application):
         def __init__(self):
-            settings = config_class_to_dict(config.get(config_name))
+            settings = _config_class_to_dict(config.get(config_name))
             super(Application, self).__init__(route.urls, **settings)
 
     app = Application()
