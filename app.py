@@ -86,7 +86,8 @@ def manage_cli():
     app_instances()
         
 
-manage_cli()
-io_loop = IOLoop.current()
-io_loop.start()
+if __name__ == "__main__":
+    manage_cli()
+    io_loop = IOLoop.current()
+    io_loop.start()
 
