@@ -24,7 +24,7 @@ route = Route()
 def _config_class_to_dict(cls):
     """Convert config class to dict"""
 
-    class_attributes_dict = cls.__dict__
+    class_attributes_dict = vars(cls)
     result_dict = {}
     for key, value in class_attributes_dict.items():
         if not key.startswith("__"):
