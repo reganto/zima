@@ -9,14 +9,14 @@ class Route(object):
 
     urls = []
     
-    def __call__(self, url, name=None):
-        def wrapper(cls):
+    def __call__(self, _url, _name=None):
+        def _wrapper(_cls):
             self.urls.append(URLSpec(
-                                url, 
-                                cls, 
-                                name=name if name else cls.__name__.lower()))
-            return cls
-        return wrapper
+                                _url, 
+                                _cls, 
+                                name=_name if _name else _cls.__name__.lower()))
+            return _cls
+        return _wrapper
 
 route = Route()
 
