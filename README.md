@@ -12,7 +12,7 @@
 ```bash
 usage: python app.py [options]
 
-Zima is a wrapper around Tornadoto create REST Api
+Zima is a wrapper around Tornado to create REST Api
 
 optional arguments:
   -h, --help  show this help message and exit
