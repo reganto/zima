@@ -15,6 +15,7 @@ class TestingConfig(Config):
 
 
 class ProductionConfig(Config):
+    """Production config class"""
     production = True
 
 
